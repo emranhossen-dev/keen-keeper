@@ -2,7 +2,10 @@
 import { createBrowserRouter } from 'react-router';
 import MainLayout from '../layout/MainLayout';
 import Home from '../pages/Home';
+import Timeline from '../pages/Timeline';
+import Stats from '../pages/Stats';
 import Profile from '../pages/Profile';
+
 
 export const router = createBrowserRouter([
   {
@@ -11,12 +14,23 @@ export const router = createBrowserRouter([
     children: [
         {
             path: "/",
-            element: <Home/>
+            element: <Home/>,
+            hydrateFallbackElement: <div> Loading....... </div>
         }, 
         {
-            path: "profile",
-            element: <Profile/>
-        }
+            path: "/timeline",
+            element: <Timeline/>
+        },
+        {
+            path: "/stats",
+            element: <Stats/>
+        }, 
+        {
+            path: "/details/:id",
+            element: <Profile/>,
+            loader: ()=>fetch("/data.json"),
+            hydrateFallbackElement: <div> Loading....... </div>
+        }, 
     ]
   },
 ]);
