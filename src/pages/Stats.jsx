@@ -33,7 +33,7 @@ const Stats = () => {
                         By Interaction Type
                     </h3>
 
-                    <div className="w-full h-[320px] flex items-center justify-center relative">
+                    <div className="w-full h-80 flex items-center justify-center relative">
                         {totalInteractions === 0 ? (
                             <div className="flex flex-col items-center justify-center w-52 h-52 rounded-full border-4 border-dashed border-slate-200 text-center p-4">
                                 <span className="text-3xl font-black text-slate-300">0</span>
