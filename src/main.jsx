@@ -4,10 +4,13 @@ import './index.css'
 import { RouterProvider } from 'react-router'
 import { router } from './routes/Router.jsx'
 import { ToastContainer } from 'react-toastify'
+import TimelineContextProvider from './context/TimelineProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
-    <ToastContainer />
+    <TimelineContextProvider>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </TimelineContextProvider>
   </StrictMode>,
 )
